@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import useStore from "../store";
 
-export const Header = () => {
+export const Header = ({ title }) => {
   const { all } = useStore();
   const count = useMemo(() => {
     if (!all.length) {
@@ -12,7 +12,7 @@ export const Header = () => {
 
   return (
     <div className="p-4">
-      <h1>Todos</h1>
+      <h1>{title}</h1>
       <p>{count}</p>
     </div>
   );

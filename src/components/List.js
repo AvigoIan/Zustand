@@ -1,13 +1,18 @@
 import { useMemo } from "react";
 import useStore from "../store";
+import styled from "@emotion/styled";
 
-const styles = {
-  item_done: {
-    textDecoration: "line-through",
-    color: "gray",
-    fontStyle: "italic",
-  },
-};
+const ListItem = styled.li`
+  cursor: pointer;
+  padding: 5px;
+  ${(props) =>
+    props.done &&
+    `
+    text-decoration: line-through;
+    color: gray;
+    font-style: italic;
+  `}
+`;
 
 export const List = () => {
   const { check, all, filter } = useStore();
@@ -24,12 +29,9 @@ export const List = () => {
   return (
     <ul className="px-5">
       {allItems.map((item) => (
-        <li
-          style={item.done ? styles.item_done : {}}
-          onClick={() => check(item.id)}
-        >
+        <ListItem key={item.id} done={item.done} onClick={() => check(item.id)}>
           {item.task}
-        </li>
+        </ListItem>
       ))}
     </ul>
   );

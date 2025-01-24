@@ -12,7 +12,7 @@ const Container = styled.div`
 const App = () => {
   return (
     <Container>
-      <Header />
+      <Header title={"Todos"} />
       <Form />
       <List />
       <Footer />

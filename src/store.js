@@ -4,7 +4,7 @@ const items = [
   { id: 1, task: "pay bills", done: false },
   { id: 2, task: "buy groceries", done: true },
   { id: 3, task: "learn Zustand", done: false },
-  { id: 3, task: "learn React recoil", done: false },
+  { id: 4, task: "learn React recoil", done: false },
 ];
 
 const useStore = create((set, get) => ({
